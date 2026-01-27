@@ -16,5 +16,5 @@ https://github.com/Itsmanikandan73/caesar-decoder-py.git
 cd caesar-decoder
 
 # Quick run
-python3 brute-caesar.py "Your encrypted message "
+python3 brute-caesar.py "Your encrypted message here"
 
