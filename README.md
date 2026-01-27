@@ -11,10 +11,10 @@ Only decryption -- no encryption mode.
 - Input via argument, stdin
 
 ## Installation && Usage
-'''bash
+```bash
 https://github.com/Itsmanikandan73/caesar-decoder-py.git
 cd caesar-decoder
 
-## Quick run
-python3 brute-caesar.py "Your encrypted message "
+# Quick run
+python3 brute-caesar.py "Your encrypted message here"
 
