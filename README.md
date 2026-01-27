@@ -11,7 +11,7 @@ Only decryption -- no encryption mode.
 - Input via argument, stdin
 
 ## Installation && Usage
-'''bash
+``` bash
 https://github.com/Itsmanikandan73/caesar-decoder-py.git
 cd caesar-decoder
 
