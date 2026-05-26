@@ -1,20 +1,20 @@
-# Caesar Cipher Brute-Force Decoder 
+```
+# Caesar Cipher Decoder (Hybrid Python/C Implementation)
 
-A simple python script that brute-forces all 26 possible shifts to decrypt a Caesar cipher-encrypted message.
+A high-performance Caesar cipher brute-force utility built using a hybrid architecture. The core cryptographic decryption routine is written in low-level **C** for raw execution speed and direct memory manipulation, while the interface and automation wrapper are written in **Python**. 
 
-Only decryption -- no encryption mode.
+The two environments interface seamlessly using Python's standard `ctypes` library, passing memory pointers directly to a compiled shared object (`.so`) file.
 
-## Features
-- Tries every possible shift (0-25)
-- Preserves case and non-letter characters
-- Basic English-like text detection to highlight the most probable plaintext
-- Input via argument, stdin
+## 🚀 Features
+* **In-Place Decryption:** The C implementation modifies character buffers directly in memory via pointers (`char *`), avoiding allocations and keeping overhead minimal.
+* **Brute-Force Engine:** Automatically iterations through all 26 possible shift keys.
+* **Cross-Language Bindings:** Demonstrates how to use Python's `ctypes` to bridge high-level scripts with compiled binaries.
 
-## Installation && Usage
-``` bash
-https://github.com/Itsmanikandan73/caesar-decoder-py.git
-cd caesar-decoder
-
-# Quick run
-python3 brute-caesar.py "Your encrypted message here"
-
+## 📁 Repository Structure
+```text
+caesar-decoder-py
+|_____
+|     ├── caesar.c          # Core decryption logic in C
+|     ├── decoder.py        # Python brute-force automation script
+└── README.md         # Documentation
+```
