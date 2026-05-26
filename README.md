@@ -1,20 +1,47 @@
+# Caesar Cipher Decoder (Python + C Hybrid)
+
+A fast Caesar cipher brute-force decoder that combines **Python** for the user interface with **C** for high-performance decryption.
+
+## Features
+
+- **Hybrid Implementation**: Core decryption logic in optimized C, wrapped with Python using `ctypes`
+- **Brute-force Attack**: Automatically tries all 26 possible shifts
+- **In-place Decryption**: Efficient memory manipulation directly in C
+- **Simple CLI**: Easy to use command-line interface
+
+## How It Works
+
+The C function modifies the text buffer directly for each possible shift. Python handles input/output and automation via `ctypes`.
+
+## Repository Structure
 ```
-# Caesar Cipher Decoder (Hybrid Python/C Implementation)
-
-A high-performance Caesar cipher brute-force utility built using a hybrid architecture. The core cryptographic decryption routine is written in low-level **C** for raw execution speed and direct memory manipulation, while the interface and automation wrapper are written in **Python**. 
-
-The two environments interface seamlessly using Python's standard `ctypes` library, passing memory pointers directly to a compiled shared object (`.so`) file.
-
-## 🚀 Features
-* **In-Place Decryption:** The C implementation modifies character buffers directly in memory via pointers (`char *`), avoiding allocations and keeping overhead minimal.
-* **Brute-Force Engine:** Automatically iterations through all 26 possible shift keys.
-* **Cross-Language Bindings:** Demonstrates how to use Python's `ctypes` to bridge high-level scripts with compiled binaries.
-
-## 📁 Repository Structure
-```text
-caesar-decoder-py
-|_____
-|     ├── caesar.c          # Core decryption logic in C
-|     ├── decoder.py        # Python brute-force automation script
-└── README.md         # Documentation
+caesar-decoder-py/
+|----src/
+|  |---- caesar.c  # Core decryption logic in C
+|  |---- decoder.py  # Python wrapper and brute-force script
+|  |____ .gitignore
+|---- libcaesar.so  # Compiled shared library
+|____ README.md
 ```
+
+
+## Usage
+
+1. **Compile the C code** into a shared library:
+
+```bash
+cd src
+gcc -shared -o libcaesar.so -fPIC caesar.c
+python3 decoder.py
+```
+## Example
+```
+Enter the ciphertext to decode: Khoor Zruog
+Shift 00: Khoor Zruog
+Shift 01: Jgnnq Yqtnf
+Shift 03: Hello World   ← Correct decryption
+```
+This README.md file is created by AI
+
+
+
